@@ -15,3 +15,5 @@ HashMap Methods:
 - entries
 
 Also includes the HashSet class which is the HashMap class but with keys and no values.
+
+From The Odin Project: https://www.theodinproject.com/lessons/ruby-hashmap
