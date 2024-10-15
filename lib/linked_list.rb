@@ -22,6 +22,16 @@ class LinkedList
     current_node.next_node = Node.new(key, value)
   end
 
+  def retrieve(key)
+    current_node = @head
+    until current_node.nil?
+      return current_node.value if current_node.key == key
+
+      current_node = current_node.next_node
+    end
+    nil
+  end
+
   def to_s
     current_node = @head
     string_array = []
