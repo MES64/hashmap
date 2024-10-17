@@ -3,7 +3,7 @@
 require_relative 'node'
 
 # LinkedList class contains the head node
-# It has methods to find, insert, and delete the node at any index within the linked list
+# It has methods to retrieve, insert, and delete the node at any index within the linked list
 # It also has a method for giving the size as well as listing the keys, values, or both
 class LinkedList
   def initialize
@@ -32,6 +32,19 @@ class LinkedList
     nil
   end
 
+  def delete(key)
+    return nil if @head.nil?
+    return delete_head if @head.key == key
+
+    current_node = @head
+    until current_node.next_node.nil?
+      return delete_next_node(current_node) if current_node.next_node.key == key
+
+      current_node = current_node.next_node
+    end
+    nil
+  end
+
   def to_s
     current_node = @head
     string_array = []
@@ -40,5 +53,19 @@ class LinkedList
       current_node = current_node.next_node
     end
     (string_array << 'nil').join
+  end
+
+  private
+
+  def delete_head
+    old_head = @head
+    @head = @head.next_node
+    old_head.value
+  end
+
+  def delete_next_node(current_node)
+    node_to_delete = current_node.next_node
+    current_node.next_node = current_node.next_node.next_node
+    node_to_delete.value
   end
 end

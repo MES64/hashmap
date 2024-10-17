@@ -22,3 +22,16 @@ p list.retrieve('Alice')
 p list.retrieve('Bob')
 p list.retrieve('Carl')
 p list.retrieve('Dylan')
+
+puts ''
+puts list
+p list.delete('Dylan')
+puts list
+p list.delete('Bob')
+puts list
+p list.delete('Alice')
+puts list
+p list.delete('Carl')
+puts list
+p list.delete('Alice')
+puts list
