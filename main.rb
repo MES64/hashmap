@@ -25,9 +25,9 @@ p list.retrieve('Dylan')
 
 puts ''
 
-puts 'Key Array:'
+puts 'Key Value Pairs:'
 puts list
-p list.key_array
+p list.key_value_pairs
 
 puts ''
 
@@ -48,6 +48,6 @@ puts list.size
 
 puts ''
 
-puts 'Key array:'
+puts 'Key Value Pairs:'
 puts list
-p list.key_array
+p list.key_value_pairs
