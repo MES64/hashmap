@@ -7,7 +7,7 @@ require_relative 'linked_list'
 # This implementation only works for string keys
 class HashMap
   def initialize
-    @buckets = Array.new(16)
+    @buckets = Array.new(16) { LinkedList.new }
   end
 
   def hash(key)
