@@ -55,6 +55,16 @@ class LinkedList
     count
   end
 
+  def key_array
+    current_node = @head
+    array_of_keys = []
+    until current_node.nil?
+      array_of_keys << current_node.key
+      current_node = current_node.next_node
+    end
+    array_of_keys
+  end
+
   def to_s
     current_node = @head
     string_array = []

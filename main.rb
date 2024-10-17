@@ -2,6 +2,7 @@
 
 require_relative 'lib/linked_list'
 
+puts 'Insert and Retrieve:'
 list = LinkedList.new
 puts list
 p list.retrieve('Alice')
@@ -17,15 +18,21 @@ list.insert('Alice', 50)
 puts list
 list.insert('Carl', 88)
 puts list
-
 p list.retrieve('Alice')
 p list.retrieve('Bob')
 p list.retrieve('Carl')
 p list.retrieve('Dylan')
 
-puts list.size
+puts ''
+
+puts 'Key Array:'
+puts list
+p list.key_array
 
 puts ''
+
+puts 'Delete and Size:'
+puts list.size
 puts list
 p list.delete('Dylan')
 puts list
@@ -38,3 +45,9 @@ puts list
 p list.delete('Alice')
 puts list
 puts list.size
+
+puts ''
+
+puts 'Key array:'
+puts list
+p list.key_array
