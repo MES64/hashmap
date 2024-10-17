@@ -4,7 +4,7 @@ require_relative 'node'
 
 # LinkedList class contains the head node
 # It has methods to retrieve, insert, and delete the node at any index within the linked list
-# It also has a method for giving the size as well as listing the keys, values, or both
+# It also has a method for listing the key-value pairs and to_s is used for testing
 class LinkedList
   def initialize
     @head = nil
