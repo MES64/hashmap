@@ -23,6 +23,8 @@ p list.retrieve('Bob')
 p list.retrieve('Carl')
 p list.retrieve('Dylan')
 
+puts list.size
+
 puts ''
 puts list
 p list.delete('Dylan')
@@ -35,3 +37,4 @@ p list.delete('Carl')
 puts list
 p list.delete('Alice')
 puts list
+puts list.size
