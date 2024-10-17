@@ -10,6 +10,8 @@ class HashMap
     @buckets = Array.new(16) { LinkedList.new }
   end
 
+  private
+
   def hash(key)
     hash_code = 0
     prime_number = 31
