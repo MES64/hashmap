@@ -45,16 +45,6 @@ class LinkedList
     nil
   end
 
-  def size
-    current_node = @head
-    count = 0
-    until current_node.nil?
-      count += 1
-      current_node = current_node.next_node
-    end
-    count
-  end
-
   def key_value_pairs
     current_node = @head
     array_of_pairs = []

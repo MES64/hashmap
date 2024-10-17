@@ -31,8 +31,7 @@ p list.key_value_pairs
 
 puts ''
 
-puts 'Delete and Size:'
-puts list.size
+puts 'Delete:'
 puts list
 p list.delete('Dylan')
 puts list
@@ -44,7 +43,6 @@ p list.delete('Carl')
 puts list
 p list.delete('Alice')
 puts list
-puts list.size
 
 puts ''
 
