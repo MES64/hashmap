@@ -10,6 +10,14 @@ class HashMap
     @buckets = Array.new(16) { LinkedList.new }
   end
 
+  def buckets
+    lambda do |index|
+      raise IndexError if index.negative? || index >= @buckets.length
+
+      @buckets[index]
+    end
+  end
+
   private
 
   def hash(key)
