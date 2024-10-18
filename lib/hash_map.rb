@@ -22,6 +22,10 @@ class HashMap
     !get(key).nil?
   end
 
+  def remove(key)
+    buckets[hash(key) % @buckets.length].delete(key)
+  end
+
   private
 
   def buckets

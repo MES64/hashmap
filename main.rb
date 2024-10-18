@@ -18,3 +18,11 @@ p HashMap.new.get('Alice')
 p hash_map.has?('Alice')
 p hash_map.has?('Dylan')
 p HashMap.new.has?('Alice')
+
+p hash_map.remove('Alice')
+p hash_map.has?('Alice')
+p hash_map.remove('Dylan')
+p hash_map.has?('Dylan')
+new_hash_map = HashMap.new
+p new_hash_map.remove('Alice')
+p new_hash_map.has?('Alice')
