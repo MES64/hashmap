@@ -34,6 +34,11 @@ class HashMap
     entries.length
   end
 
+  def keys
+    keys_only = entries.transpose[0]
+    keys_only.nil? ? [] : keys_only
+  end
+
   private
 
   def buckets

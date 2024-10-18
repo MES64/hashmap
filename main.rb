@@ -32,3 +32,9 @@ p HashMap.new.entries
 
 p hash_map.length
 p HashMap.new.length
+
+p hash_map.keys
+new_hash_map = HashMap.new
+p new_hash_map.keys
+new_hash_map.set('Alice', 40)
+p new_hash_map.keys
