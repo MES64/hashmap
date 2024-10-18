@@ -29,3 +29,6 @@ p new_hash_map.has?('Alice')
 
 p hash_map.entries
 p HashMap.new.entries
+
+p hash_map.length
+p HashMap.new.length

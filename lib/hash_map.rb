@@ -30,6 +30,10 @@ class HashMap
     @buckets.map(&:key_value_pairs).flatten(1)
   end
 
+  def length
+    entries.length
+  end
+
   private
 
   def buckets
