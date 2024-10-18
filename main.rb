@@ -26,3 +26,6 @@ p hash_map.has?('Dylan')
 new_hash_map = HashMap.new
 p new_hash_map.remove('Alice')
 p new_hash_map.has?('Alice')
+
+p hash_map.entries
+p HashMap.new.entries

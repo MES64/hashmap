@@ -26,6 +26,10 @@ class HashMap
     buckets[hash(key) % @buckets.length].delete(key)
   end
 
+  def entries
+    @buckets.map(&:key_value_pairs).flatten(1)
+  end
+
   private
 
   def buckets
