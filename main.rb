@@ -38,3 +38,9 @@ new_hash_map = HashMap.new
 p new_hash_map.keys
 new_hash_map.set('Alice', 40)
 p new_hash_map.keys
+
+p hash_map.values
+new_hash_map = HashMap.new
+p new_hash_map.values
+new_hash_map.set('Alice', 40)
+p new_hash_map.values
