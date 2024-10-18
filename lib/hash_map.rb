@@ -44,6 +44,10 @@ class HashMap
     values_only.nil? ? [] : values_only
   end
 
+  def clear
+    initialize
+  end
+
   private
 
   def buckets

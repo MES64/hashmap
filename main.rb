@@ -44,3 +44,12 @@ new_hash_map = HashMap.new
 p new_hash_map.values
 new_hash_map.set('Alice', 40)
 p new_hash_map.values
+
+p hash_map.entries
+hash_map.clear
+p hash_map.entries
+p new_hash_map.entries
+new_hash_map.clear
+p new_hash_map.entries
+new_hash_map.clear
+p new_hash_map.entries
