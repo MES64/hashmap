@@ -10,3 +10,6 @@ hash_map.set('Alice', 45)
 hash_map.set('Carla', 18)
 ('A'..'Z').each { |char| hash_map.set(char, char.ord) }
 p hash_map
+
+p hash_map.get('Alice')
+p hash_map.get('Dylan')

@@ -14,6 +14,10 @@ class HashMap
     buckets[hash(key) % @buckets.length].insert(key, value)
   end
 
+  def get(key)
+    buckets[hash(key) % @buckets.length].retrieve(key)
+  end
+
   private
 
   def buckets
