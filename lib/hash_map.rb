@@ -10,6 +10,10 @@ class HashMap
     @buckets = Array.new(16) { LinkedList.new }
   end
 
+  def set(key, value)
+    buckets[hash(key) % @buckets.length].insert(key, value)
+  end
+
   private
 
   def buckets
