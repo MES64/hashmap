@@ -13,3 +13,8 @@ p hash_map
 
 p hash_map.get('Alice')
 p hash_map.get('Dylan')
+p HashMap.new.get('Alice')
+
+p hash_map.has?('Alice')
+p hash_map.has?('Dylan')
+p HashMap.new.has?('Alice')

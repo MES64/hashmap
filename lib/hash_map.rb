@@ -18,6 +18,10 @@ class HashMap
     buckets[hash(key) % @buckets.length].retrieve(key)
   end
 
+  def has?(key)
+    !get(key).nil?
+  end
+
   private
 
   def buckets
