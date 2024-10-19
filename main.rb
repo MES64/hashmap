@@ -73,3 +73,18 @@ p hash_map.length
 hash_map.clear
 p hash_map.entries
 p hash_map.length
+
+puts ''
+
+hash_map = HashMap.new
+p hash_map.entries
+p hash_map.length
+p hash_map.need_to_grow?
+('A'..'L').each { |char| hash_map.set(char, char.ord) }
+p hash_map.entries
+p hash_map.length
+p hash_map.need_to_grow?
+hash_map.set('M', 'M'.ord)
+p hash_map.entries
+p hash_map.length
+p hash_map.need_to_grow?

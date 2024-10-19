@@ -6,6 +6,8 @@ require_relative 'linked_list'
 # Methods: set, get, has?, remove, length, clear, keys, values, entries
 # This implementation only works for string keys
 class HashMap
+  LOAD_FACTOR = 0.8
+
   attr_reader :length
 
   def initialize
@@ -47,6 +49,10 @@ class HashMap
 
   def clear
     initialize
+  end
+
+  def need_to_grow?
+    @length >= LOAD_FACTOR * @buckets.length
   end
 
   private
