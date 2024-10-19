@@ -53,3 +53,23 @@ new_hash_map.clear
 p new_hash_map.entries
 new_hash_map.clear
 p new_hash_map.entries
+
+# Test new length method (init, set, remove, clear; then check updated correctly)
+hash_map = HashMap.new
+p hash_map.entries
+p hash_map.length
+('A'..'E').each { |char| hash_map.set(char, char.ord) }
+p hash_map.entries
+p hash_map.length
+('A'..'E').each { |char| hash_map.set(char, char.ord * 2) }
+p hash_map.entries
+p hash_map.length
+('F'..'J').each { |char| hash_map.remove(char) }
+p hash_map.entries
+p hash_map.length
+('A'..'C').each { |char| hash_map.remove(char) }
+p hash_map.entries
+p hash_map.length
+hash_map.clear
+p hash_map.entries
+p hash_map.length

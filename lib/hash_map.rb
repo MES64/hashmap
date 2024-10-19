@@ -6,11 +6,15 @@ require_relative 'linked_list'
 # Methods: set, get, has?, remove, length, clear, keys, values, entries
 # This implementation only works for string keys
 class HashMap
+  attr_reader :length
+
   def initialize
     @buckets = Array.new(16) { LinkedList.new }
+    @length = 0
   end
 
   def set(key, value)
+    @length += 1 unless has?(key)
     buckets[hash(key) % @buckets.length].insert(key, value)
   end
 
@@ -23,15 +27,12 @@ class HashMap
   end
 
   def remove(key)
+    @length -= 1 if has?(key)
     buckets[hash(key) % @buckets.length].delete(key)
   end
 
   def entries
     @buckets.map(&:key_value_pairs).flatten(1)
-  end
-
-  def length
-    entries.length
   end
 
   def keys
