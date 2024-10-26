@@ -51,18 +51,6 @@ class HashMap
     initialize
   end
 
-  def need_to_grow?
-    @length >= LOAD_FACTOR * @buckets.length
-  end
-
-  def grow
-    puts @buckets.length
-    old_entries = entries
-    initialize(@buckets.length * 2)
-    old_entries.each { |key, value| set(key, value) }
-    puts @buckets.length
-  end
-
   private
 
   def buckets
@@ -80,5 +68,15 @@ class HashMap
     key.each_char { |char| hash_code = hash_code * prime_number + char.ord }
 
     hash_code
+  end
+
+  def need_to_grow?
+    @length >= LOAD_FACTOR * @buckets.length
+  end
+
+  def grow
+    old_entries = entries
+    initialize(@buckets.length * 2)
+    old_entries.each { |key, value| set(key, value) }
   end
 end
