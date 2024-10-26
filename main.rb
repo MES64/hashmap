@@ -88,3 +88,9 @@ hash_map.set('M', 'M'.ord)
 p hash_map.entries
 p hash_map.length
 p hash_map.need_to_grow?
+
+p hash_map.entries
+p hash_map.length
+hash_map.grow
+p hash_map.entries
+p hash_map.length

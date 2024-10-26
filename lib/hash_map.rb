@@ -10,8 +10,8 @@ class HashMap
 
   attr_reader :length
 
-  def initialize
-    @buckets = Array.new(16) { LinkedList.new }
+  def initialize(capacity = 16)
+    @buckets = Array.new(capacity) { LinkedList.new }
     @length = 0
   end
 
@@ -53,6 +53,14 @@ class HashMap
 
   def need_to_grow?
     @length >= LOAD_FACTOR * @buckets.length
+  end
+
+  def grow
+    puts @buckets.length
+    old_entries = entries
+    initialize(@buckets.length * 2)
+    old_entries.each { |key, value| set(key, value) }
+    puts @buckets.length
   end
 
   private
