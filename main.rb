@@ -73,3 +73,45 @@ p hash_map.length
 hash_map.clear
 p hash_map.entries
 p hash_map.length
+
+# TODO: Test new set stuff
+puts ''
+hash_map = HashMap.new
+puts "Length = #{hash_map.length}"
+('A'...'Z').each do |char|
+  hash_map.set(char, char.ord * 2)
+  puts "Length = #{hash_map.length}"
+end
+('a'...'z').each do |char|
+  hash_map.set(char, char.ord * 2)
+  puts "Length = #{hash_map.length}"
+end
+
+# Also test all methods after growth...
+puts ''
+puts 'Test All:'
+
+p hash_map.get('A')
+p hash_map.get('Dylan')
+
+p hash_map.has?('A')
+p hash_map.has?('Dylan')
+
+p hash_map.remove('A')
+p hash_map.has?('A')
+p hash_map.remove('Dylan')
+p hash_map.has?('Dylan')
+
+p hash_map.entries
+
+p hash_map.length
+
+p hash_map.keys
+
+p hash_map.values
+
+p hash_map.entries
+hash_map.clear
+p hash_map.entries
+hash_map.set('A', 2)
+p hash_map.length
