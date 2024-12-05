@@ -74,7 +74,6 @@ hash_map.clear
 p hash_map.entries
 p hash_map.length
 
-# TODO: Test new set stuff
 puts ''
 hash_map = HashMap.new
 puts "Length = #{hash_map.length}"

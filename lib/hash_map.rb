@@ -16,11 +16,9 @@ class HashMap
   end
 
   def set(key, value)
-    puts "Capacity: #{@buckets.length}"
     @length += 1 unless has?(key)
     buckets[hash(key) % @buckets.length].insert(key, value)
     grow if need_to_grow?
-    puts "Capacity: #{@buckets.length}"
   end
 
   def get(key)
