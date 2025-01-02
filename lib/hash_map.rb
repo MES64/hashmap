@@ -6,12 +6,16 @@ require_relative 'linked_list'
 # Methods: set, get, has?, remove, length, clear, keys, values, entries
 # This implementation only works for string keys
 class HashMap
-  LOAD_FACTOR = 0.8
+  attr_reader :length, :load_factor, :capacity
 
-  attr_reader :length
+  def initialize(load_factor = 0.8, capacity = 16)
+    @load_factor = load_factor
+    @capacity = capacity
+    clear
+  end
 
-  def initialize(capacity = 16)
-    @buckets = Array.new(capacity) { LinkedList.new }
+  def clear
+    @buckets = Array.new(@capacity) { LinkedList.new }
     @length = 0
   end
 
@@ -48,10 +52,6 @@ class HashMap
     values_only.nil? ? [] : values_only
   end
 
-  def clear
-    initialize
-  end
-
   private
 
   def buckets
@@ -72,12 +72,13 @@ class HashMap
   end
 
   def need_to_grow?
-    @length >= LOAD_FACTOR * @buckets.length
+    @length >= @load_factor * @capacity
   end
 
   def grow
     old_entries = entries
-    initialize(@buckets.length * 2)
+    @capacity *= 2
+    clear
     old_entries.each { |key, value| set(key, value) }
   end
 end

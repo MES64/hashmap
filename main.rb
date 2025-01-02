@@ -75,16 +75,21 @@ p hash_map.entries
 p hash_map.length
 
 puts ''
-hash_map = HashMap.new
+hash_map = HashMap.new(0.5, 16)
+puts "Load Factor = #{hash_map.load_factor}"
 puts "Length = #{hash_map.length}"
+puts "Capacity = #{hash_map.capacity}"
 ('A'...'Z').each do |char|
   hash_map.set(char, char.ord * 2)
   puts "Length = #{hash_map.length}"
+  puts "Capacity = #{hash_map.capacity}"
 end
 ('a'...'z').each do |char|
   hash_map.set(char, char.ord * 2)
   puts "Length = #{hash_map.length}"
+  puts "Capacity = #{hash_map.capacity}"
 end
+puts "Load Factor = #{hash_map.load_factor}"
 
 # Also test all methods after growth...
 puts ''
@@ -114,3 +119,5 @@ hash_map.clear
 p hash_map.entries
 hash_map.set('A', 2)
 p hash_map.length
+
+# TODO:
