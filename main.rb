@@ -2,122 +2,68 @@
 
 require_relative 'lib/hash_map'
 
-hash_map = HashMap.new
-hash_map.set('Alice', 38)
-hash_map.set('Bob', 22)
-hash_map.set('Carl', 18)
-hash_map.set('Alice', 45)
-hash_map.set('Carla', 18)
-('A'..'Z').each { |char| hash_map.set(char, char.ord) }
-p hash_map
+# TODO: Possibly shrink and HashSet
 
-p hash_map.get('Alice')
-p hash_map.get('Dylan')
-p HashMap.new.get('Alice')
+test = HashMap.new(0.75)
 
-p hash_map.has?('Alice')
-p hash_map.has?('Dylan')
-p HashMap.new.has?('Alice')
+test.set('apple', 'red')
+test.set('banana', 'yellow')
+test.set('carrot', 'orange')
+test.set('dog', 'brown')
+test.set('elephant', 'gray')
+test.set('frog', 'green')
+test.set('grape', 'purple')
+test.set('hat', 'black')
+test.set('ice cream', 'white')
+test.set('jacket', 'blue')
+test.set('kite', 'pink')
+test.set('lion', 'golden')
 
-p hash_map.remove('Alice')
-p hash_map.has?('Alice')
-p hash_map.remove('Dylan')
-p hash_map.has?('Dylan')
-new_hash_map = HashMap.new
-p new_hash_map.remove('Alice')
-p new_hash_map.has?('Alice')
+p test.capacity
+p test.length
+p test.entries
 
-p hash_map.entries
-p HashMap.new.entries
+test.set('apple', 'green')
+test.set('lion', 'orange')
 
-p hash_map.length
-p HashMap.new.length
+p test.capacity
+p test.length
+p test.entries
 
-p hash_map.keys
-new_hash_map = HashMap.new
-p new_hash_map.keys
-new_hash_map.set('Alice', 40)
-p new_hash_map.keys
+p test
 
-p hash_map.values
-new_hash_map = HashMap.new
-p new_hash_map.values
-new_hash_map.set('Alice', 40)
-p new_hash_map.values
+test.set('moon', 'silver')
 
-p hash_map.entries
-hash_map.clear
-p hash_map.entries
-p new_hash_map.entries
-new_hash_map.clear
-p new_hash_map.entries
-new_hash_map.clear
-p new_hash_map.entries
+p test.capacity
+p test.length
+p test.entries
 
-# Test new length method (init, set, remove, clear; then check updated correctly)
-hash_map = HashMap.new
-p hash_map.entries
-p hash_map.length
-('A'..'E').each { |char| hash_map.set(char, char.ord) }
-p hash_map.entries
-p hash_map.length
-('A'..'E').each { |char| hash_map.set(char, char.ord * 2) }
-p hash_map.entries
-p hash_map.length
-('F'..'J').each { |char| hash_map.remove(char) }
-p hash_map.entries
-p hash_map.length
-('A'..'C').each { |char| hash_map.remove(char) }
-p hash_map.entries
-p hash_map.length
-hash_map.clear
-p hash_map.entries
-p hash_map.length
+p test
 
-puts ''
-hash_map = HashMap.new(0.5, 16)
-puts "Load Factor = #{hash_map.load_factor}"
-puts "Length = #{hash_map.length}"
-puts "Capacity = #{hash_map.capacity}"
-('A'...'Z').each do |char|
-  hash_map.set(char, char.ord * 2)
-  puts "Length = #{hash_map.length}"
-  puts "Capacity = #{hash_map.capacity}"
-end
-('a'...'z').each do |char|
-  hash_map.set(char, char.ord * 2)
-  puts "Length = #{hash_map.length}"
-  puts "Capacity = #{hash_map.capacity}"
-end
-puts "Load Factor = #{hash_map.load_factor}"
+test.set('jacket', 'red')
+test.set('kite', 'brown')
 
-# Also test all methods after growth...
-puts ''
-puts 'Test All:'
+p test.capacity
+p test.length
+p test.entries
 
-p hash_map.get('A')
-p hash_map.get('Dylan')
+p test.get('kite')
+p test.has?('kite')
+p test.remove('kite')
+p test.get('kite')
+p test.has?('kite')
+p test.length
+p test.entries
+p test.remove('kite')
+p test.length
+p test.entries
 
-p hash_map.has?('A')
-p hash_map.has?('Dylan')
-
-p hash_map.remove('A')
-p hash_map.has?('A')
-p hash_map.remove('Dylan')
-p hash_map.has?('Dylan')
-
-p hash_map.entries
-
-p hash_map.length
-
-p hash_map.keys
-
-p hash_map.values
-
-p hash_map.entries
-hash_map.clear
-p hash_map.entries
-hash_map.set('A', 2)
-p hash_map.length
-
-# TODO:
+p test.keys
+p test.values
+p test.entries
+p test.length
+test.clear
+p test.keys
+p test.values
+p test.entries
+p test.length

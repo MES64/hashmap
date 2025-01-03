@@ -72,7 +72,7 @@ class HashMap
   end
 
   def need_to_grow?
-    @length >= @load_factor * @capacity
+    @length > @load_factor * @capacity
   end
 
   def grow
