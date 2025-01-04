@@ -2,7 +2,7 @@
 
 require_relative 'lib/hash_map'
 
-# TODO: Possibly shrink and HashSet
+# TODO: HashSet
 
 test = HashMap.new(0.75)
 

@@ -2,7 +2,7 @@
 
 require_relative 'linked_list'
 
-# HashMap contains the buckets array
+# HashMap contains the buckets array, load factor, capacity, and length
 # Methods: set, get, has?, remove, length, clear, keys, values, entries
 # This implementation only works for string keys
 class HashMap
@@ -21,12 +21,12 @@ class HashMap
 
   def set(key, value)
     @length += 1 unless has?(key)
-    buckets[hash(key) % @buckets.length].insert(key, value)
+    buckets[hash(key) % @capacity].insert(key, value)
     grow if need_to_grow?
   end
 
   def get(key)
-    buckets[hash(key) % @buckets.length].retrieve(key)
+    buckets[hash(key) % @capacity].retrieve(key)
   end
 
   def has?(key)
@@ -35,7 +35,7 @@ class HashMap
 
   def remove(key)
     @length -= 1 if has?(key)
-    buckets[hash(key) % @buckets.length].delete(key)
+    buckets[hash(key) % @capacity].delete(key)
   end
 
   def entries
@@ -56,7 +56,7 @@ class HashMap
 
   def buckets
     lambda do |index|
-      raise IndexError if index.negative? || index >= @buckets.length
+      raise IndexError if index.negative? || index >= @capacity
 
       @buckets[index]
     end
