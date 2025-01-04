@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 require_relative 'lib/hash_map'
+require_relative 'lib/hash_set'
 
 # TODO: HashSet
 
+puts 'HashMap Final Test:'
 test = HashMap.new(0.75)
 
 test.set('apple', 'red')
@@ -67,3 +69,56 @@ p test.keys
 p test.values
 p test.entries
 p test.length
+
+puts 'HashSet:'
+hash_set = HashSet.new(0.75)
+
+hash_set.add('apple')
+hash_set.add('banana')
+hash_set.add('carrot')
+hash_set.add('dog')
+hash_set.add('elephant')
+hash_set.add('frog')
+hash_set.add('grape')
+hash_set.add('hat')
+hash_set.add('ice cream')
+hash_set.add('jacket')
+hash_set.add('kite')
+hash_set.add('lion')
+
+p hash_set.capacity
+p hash_set.length
+p hash_set.entries
+
+hash_set.add('apple')
+hash_set.add('lion')
+
+p hash_set.capacity
+p hash_set.length
+p hash_set.entries
+
+hash_set.add('moon')
+
+p hash_set.capacity
+p hash_set.length
+p hash_set.entries
+
+hash_set.add('jacket')
+hash_set.add('kite')
+
+p hash_set.capacity
+p hash_set.length
+p hash_set.entries
+
+p hash_set.has?('kite')
+p hash_set.remove('kite')
+p hash_set.has?('kite')
+p hash_set.length
+p hash_set.entries
+p hash_set.remove('kite')
+p hash_set.length
+p hash_set.entries
+
+hash_set.clear
+p hash_set.length
+p hash_set.entries

@@ -3,7 +3,7 @@
 require_relative 'linked_list'
 
 # HashMap contains the buckets array, load factor, capacity, and length
-# Methods: set, get, has?, remove, length, clear, keys, values, entries
+# Methods: set, get, has?, remove, length, clear, keys, values, entries, and read load factor and capacity
 # This implementation only works for string keys
 class HashMap
   attr_reader :length, :load_factor, :capacity
