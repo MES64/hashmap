@@ -2,8 +2,9 @@
 
 require_relative 'lib/hash_map'
 require_relative 'lib/hash_set'
+require_relative 'lib/linked_list'
 
-# TODO: HashSet
+# TODO: HashSet: Update linked list and hash map; test linked list, hash map, hash set
 
 puts 'HashMap Final Test:'
 test = HashMap.new(0.75)
@@ -122,3 +123,14 @@ p hash_set.entries
 hash_set.clear
 p hash_set.length
 p hash_set.entries
+
+puts 'Linked List:'
+list = LinkedList.new
+p list.contains?('Anna')
+list.insert('Anna', 28)
+p list.contains?('Anna')
+p list.contains?('Bob')
+list.insert('Bob', 25)
+p list.contains?('Anna')
+p list.contains?('Bob')
+p list.contains?('Carl')

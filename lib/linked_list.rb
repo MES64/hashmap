@@ -32,6 +32,16 @@ class LinkedList
     nil
   end
 
+  def contains?(key)
+    current_node = @head
+    until current_node.nil?
+      return true if current_node.key == key
+
+      current_node = current_node.next_node
+    end
+    false
+  end
+
   def delete(key)
     return nil if @head.nil?
     return delete_head if @head.key == key
