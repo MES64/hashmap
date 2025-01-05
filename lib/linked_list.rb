@@ -4,6 +4,7 @@ require_relative 'node'
 
 # LinkedList class contains the head node
 # It has methods to retrieve, insert, and delete the node at any index within the linked list
+# Also has the contains? method to check if a node with a given key exists
 # It also has a method for listing the key-value pairs and to_s is used for testing
 class LinkedList
   def initialize
