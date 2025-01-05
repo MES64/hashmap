@@ -30,7 +30,7 @@ class HashMap
   end
 
   def has?(key)
-    !get(key).nil?
+    buckets[hash(key) % @capacity].contains?(key)
   end
 
   def remove(key)
